@@ -60,11 +60,7 @@ export function CtaDownloadSection() {
         <div className="relative mt-8 flex flex-1 min-h-[320px] items-end justify-center md:order-2 md:mt-0 md:min-h-[420px] md:justify-end lg:min-h-[480px]">
           <div
             className="absolute left-1/2 h-[320px] w-full max-w-[280px] -translate-x-1/2 sm:h-[380px] sm:max-w-[320px] md:left-auto md:right-0 md:h-[420px] md:max-w-[360px] md:translate-x-0 lg:h-[480px] lg:max-w-[400px]"
-            style={{
-              // Vertical : utiliser soit top soit bottom (pas les deux)
-              top: "-80px", // remonter l'image — ex: "-80px", "0", "1rem"
-              // bottom: "0", // ou ancrer en bas — ex: "0", "1rem"
-            }}
+            style={{ top: "-80px" }}
           >
             <Image
               src="/ment-with-f.png"

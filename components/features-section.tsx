@@ -25,9 +25,6 @@ export function FeaturesSection() {
   return (
     <section id="fonctionnalites" className="relative bg-white py-16 sm:py-20 lg:py-24 scroll-mt-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center">
-        {/* Titre principal */}
-
-        {/* Titre — pleine largeur sur mobile, largeur contenue sur desktop */}
         <h2 className="w-full max-w-2xl mx-auto lg:max-w-none lg:w-2/5 text-center text-2xl font-bold tracking-tight text-foreground sm:text-3xl sm:max-w-xl md:text-4xl lg:text-5xl">
           Une solution complète pour tous.
         </h2>
@@ -48,8 +45,6 @@ export function FeaturesSection() {
             </div>
           ))}
         </div>
-{/* flex flex-col rounded-xl hover:border-blue-600 border border-border/50 bg-card/30 p-6 shadow-sm transition-shadow hover:shadow-md sm:p-8 */}
-        {/* Boutons App Store & Google Play (images cliquables) */}
         <div className="mt-8 flex flex-col items-center justify-center gap-2 sm:mt-10 sm:flex-row">
           <a
             href={APP_STORE_URL}

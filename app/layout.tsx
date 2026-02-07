@@ -1,18 +1,119 @@
 import React from "react"
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import type { Metadata } from "next"
+import { Inter } from "next/font/google"
+import {
+  SITE_URL,
+  SITE_NAME,
+  SITE_DESCRIPTION,
+  SITE_KEYWORDS,
+  DEFAULT_OG_IMAGE,
+} from "@/lib/seo"
 
-import './globals.css'
+import "./globals.css"
 
-const inter = Inter({ 
-  subsets: ['latin'],
-  variable: '--font-inter',
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
 })
 
 export const metadata: Metadata = {
-  title: 'immo+ - Gestion Immobilière Intelligente',
-  description: 'La plateforme SaaS moderne pour gérer vos biens, clients, contrats et paiements en toute simplicité.',
-  generator: 'v0.app',
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: `${SITE_NAME} — Gestion immobilière intelligente | Côte d'Ivoire`,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  keywords: SITE_KEYWORDS,
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    type: "website",
+    locale: "fr_CI",
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    title: `${SITE_NAME} — Gestion immobilière intelligente`,
+    description: SITE_DESCRIPTION,
+    images: [
+      {
+        url: DEFAULT_OG_IMAGE,
+        width: 512,
+        height: 512,
+        alt: `${SITE_NAME} - Logo`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${SITE_NAME} — Gestion immobilière intelligente`,
+    description: SITE_DESCRIPTION,
+    images: [DEFAULT_OG_IMAGE],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+  alternates: {
+    canonical: SITE_URL,
+  },
+  category: "technology",
+  applicationName: SITE_NAME,
+}
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: SITE_NAME,
+  url: SITE_URL,
+  description: SITE_DESCRIPTION,
+  logo: DEFAULT_OG_IMAGE,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Abidjan",
+    addressCountry: "CI",
+  },
+  sameAs: [
+    "https://www.instagram.com/immoplus_lapp",
+    "https://web.facebook.com/profile.php?id=61584464421569",
+  ],
+}
+
+const webApplicationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: `${SITE_NAME} Pro`,
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Android, iOS",
+  description: SITE_DESCRIPTION,
+  url: SITE_URL,
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "XOF",
+  },
+}
+
+const webSiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE_NAME,
+  url: SITE_URL,
+  description: SITE_DESCRIPTION,
+  inLanguage: "fr-CI",
+  publisher: {
+    "@type": "Organization",
+    name: SITE_NAME,
+    logo: DEFAULT_OG_IMAGE,
+  },
 }
 
 export default function RootLayout({
@@ -22,8 +123,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      
-      {/* For logo  */}
       <head>
         <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
         <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
@@ -42,6 +141,24 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
         <meta name="theme-color" content="#ffffff" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(webApplicationJsonLd),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(webSiteJsonLd),
+          }}
+        />
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>{children}</body>
     </html>

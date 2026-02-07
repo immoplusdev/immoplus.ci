@@ -10,7 +10,6 @@ const servicesLinks = [
   { label: "Locations Longue Durée", href: "#" },
   { label: "Achat de Terrains", href: "#" },
   { label: "Vente de Maisons", href: "#" },
-  // { label: "Espace Professionnel", href: "#", active: true },
 ]
 
 const assistanceLinks = [
@@ -55,11 +54,7 @@ export function Footer() {
                 <li key={item.label}>
                   <Link
                     href={item.href}
-                    className={`text-[15px] transition-colors hover:text-white sm:text-base ${
-                      item.active
-                        ? "font-medium text-[#3B82F6] underline decoration-[#3B82F6] underline-offset-2"
-                        : "text-[#B4B4B4]"
-                    }`}
+                    className="text-[15px] text-[#B4B4B4] transition-colors hover:text-white sm:text-base"
                   >
                     {item.label}
                   </Link>

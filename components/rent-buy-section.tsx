@@ -2,7 +2,6 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight } from "lucide-react"
 
 export function RentBuySection() {
   return (
@@ -24,7 +23,6 @@ export function RentBuySection() {
                 className="inline-flex items-center gap-2 text-[#156EE4] font-semibold transition-colors hover:text-[#1259c7]"
               >
                 Voir les locations
-                {/* <ArrowRight className="h-5 w-5" /> */}
               </Link>
               <span className="mt-0.5 block h-0.5 w-[6.6875rem] bg-[#4262FF]" />
             </div>
@@ -120,7 +118,6 @@ export function RentBuySection() {
                 className="inline-flex items-center gap-2 text-[#156EE4] font-semibold transition-colors hover:text-[#1259c7] "
               >
                 Découvrir les ventes
-                {/* <ArrowRight className="h-5 w-5" /> */}
               </Link>
               <span className="mt-0.5 block h-0.5 w-[6.6875rem] bg-[#4262FF]" />
             </div>

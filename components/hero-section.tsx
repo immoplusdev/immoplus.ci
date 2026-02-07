@@ -2,8 +2,7 @@
 
 import { useEffect, useState } from "react"
 import Image from "next/image"
-import { Users, Building2, CreditCard, BarChart3, ChevronDown, BadgeCheck, Upload, LayoutGrid, Banknote } from "lucide-react"
-import { CountUp } from "@/components/count-up"
+import { Building2, Upload, LayoutGrid, Banknote } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { getDownloadUrl, APP_STORE_URL } from "@/lib/app-links"
 
@@ -52,10 +51,6 @@ export function HeroSection() {
       }}
     >
 
-
-      {/* Subtle glow effects */}
-      {/* <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-[#A4F0FF]/20 rounded-full blur-3xl pointer-events-none" /> */}
-      {/* <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[#156EE4]/15 rounded-full blur-3xl pointer-events-none" /> */}
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-12">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-12">
@@ -174,7 +169,7 @@ export function HeroSection() {
 
               {/* Social proof: avatars + stats */}
               <div
-                className={`flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 transition-all duration-500 delay-[400ms] ${
+                className={`flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 transition-all duration-500 delay-500 ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-1"
                 }`}
               >
@@ -210,8 +205,6 @@ export function HeroSection() {
                 }`}
               >
                 <span>10K+ Utilisateurs actifs</span>
-                {/* <span className="inline-block w-px h-4 bg-gray-300 mx-3 align-middle" aria-hidden /> */}
-                {/* <span>146+ agences certifiées</span> */}
               </p>
               </div>
             </div>
@@ -223,64 +216,7 @@ export function HeroSection() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
             }`}
           >
-          {/* Left KPI Widget - Users */}
-          {/* <div
-            className="absolute left-4 sm:left-8 lg:left-1/4 top-1/3 z-20 animate-fade-in"
-            style={{ animationDelay: "800ms", animationFillMode: "both" }}
-          >
-            <div className="bg-white rounded-2xl p-4 shadow-xl shadow-black/10 hover:shadow-2xl transition-shadow duration-300">
-              <div className="flex items-center gap-3">
-                <div className="flex -space-x-2">
-                  {avatars.map((avatar, i) => (
-                    <Image
-                      key={i}
-                      src={avatar || "/placeholder.svg"}
-                      alt="User avatar"
-                      width={28}
-                      height={28}
-                      className="rounded-full border-2 border-white"
-                    />
-                  ))}
-                </div>
-                <div>
-                  <div className="font-bold text-foreground text-lg">
-                    <CountUp end={8000} suffix="+" />
-                  </div>
-                  <div className="text-xs text-muted-foreground">utilisateurs actifs</div>
-                </div>
-              </div>
-            </div>
-          </div> */}
-
-          {/* Right KPI Widget - Agencies */}
-          {/* <div
-            className="absolute right-4 sm:right-8 lg:right-1/4 top-1/2 z-20 animate-fade-in"
-            style={{ animationDelay: "1000ms", animationFillMode: "both" }}
-          >
-            <div className="bg-white rounded-2xl p-4 shadow-xl shadow-black/10 hover:shadow-2xl transition-shadow duration-300">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#156EE4]/10 flex items-center justify-center">
-                  <BadgeCheck className="w-5 h-5 text-[#156EE4]" />
-                </div>
-                <div>
-                  <div className="font-bold text-foreground text-lg">
-                    <CountUp end={100} suffix="+" />
-                  </div>
-                  <div className="text-xs text-muted-foreground">agences certifiees</div>
-                </div>
-              </div>
-            </div>
-          </div> */}
-
-
-          {/* Phone Mockup */}
-          <div className="
-          relative 
-          
-       
-                
-             
-           ">
+          <div className="relative">
           <div className="relative w-[180px] sm:w-[220px] lg:w-[260px]">
 
               {/* Phone frame */}
@@ -308,41 +244,6 @@ export function HeroSection() {
               <div className="absolute -bottom-12 -left-12 w-40 h-40 bg-[#156EE4]/25 rounded-full blur-3xl pointer-events-none" />
             </div>
           </div>
-
-          {/* Floating Notification Cards */}
-          {/* <div
-            className="absolute left-8 sm:left-16 lg:left-1/3 bottom-1/4 z-20 animate-fade-in hidden sm:block"
-            style={{ animationDelay: "1100ms", animationFillMode: "both" }}
-          >
-            <div className="bg-white rounded-xl p-3 shadow-lg shadow-black/10">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
-                  <CreditCard className="w-4 h-4 text-green-600" />
-                </div>
-                <div>
-                  <div className="text-xs font-medium text-foreground">Paiement recu</div>
-                  <div className="text-xs text-muted-foreground">+1,250.00 EUR</div>
-                </div>
-              </div>
-            </div>
-          </div> */}
-
-          {/* <div
-            className="absolute right-8 sm:right-16 lg:right-1/3 bottom-1/3 z-20 animate-fade-in hidden sm:block"
-            style={{ animationDelay: "1300ms", animationFillMode: "both" }}
-          >
-            <div className="bg-white rounded-xl p-3 shadow-lg shadow-black/10">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
-                  <BarChart3 className="w-4 h-4 text-[#156EE4]" />
-                </div>
-                <div>
-                  <div className="text-xs font-medium text-foreground">Taux occupation</div>
-                  <div className="text-xs text-[#156EE4] font-bold">94.5%</div>
-                </div>
-              </div>
-            </div>
-          </div> */}
         </div>
         </div>
       </div>
