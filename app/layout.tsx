@@ -159,6 +159,16 @@ export default function RootLayout({
             __html: JSON.stringify(webSiteJsonLd),
           }}
         />
+        
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-KDQENRT798"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-KDQENRT798');
+        </script>
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>{children}</body>
     </html>
