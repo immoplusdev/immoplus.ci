@@ -164,10 +164,10 @@ export default function PolitiqueConfidentialitePage() {
               <p className="mt-4 text-sm text-[#333] sm:text-base">
                 Pour exercer ces droits, contactez-nous à :{" "}
                 <a
-                  href="mailto:contact@immoplusci.com"
+                  href="mailto:support@immoplus.ci"
                   className="font-medium text-[#156EE4] hover:underline"
                 >
-                  contact@immoplusci.com
+                  support@immoplus.ci
                 </a>
               </p>
             </section>
@@ -213,10 +213,10 @@ export default function PolitiqueConfidentialitePage() {
                 <span className="font-semibold text-[#333]">ImmoPlus</span>
                 <span className="text-gray-500">–</span>
                 <a
-                  href="mailto:contact@immoplusci.com"
+                  href="mailto:support@immoplus.ci"
                   className="font-medium text-[#156EE4] hover:underline"
                 >
-                  contact@immoplusci.com
+                  support@immoplus.ci
                 </a>
               </div>
             </section>

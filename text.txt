@@ -1,0 +1,74 @@
+Points à améliorer (par priorité)
+
+  🔴 Critique
+
+  1. Image OG trop petite et mauvais ratio
+  - DEFAULT_OG_IMAGE pointe vers /logo.png (512×512)
+  - Les réseaux sociaux (Facebook, LinkedIn, Twitter) attendent 1200×630px en 1.91:1
+  - Résultat : la vignette sera déformée ou trop petite lors du partage
+
+  2. Fautes d'accents dans le texte visible (hero-section.tsx)
+  - "La gestion immobiliere" → manque l'accent sur immobilière
+  - "Gerez biens" → devrait être Gérez biens
+  - Ces mots dans le H1 sont des signaux de qualité de contenu importants pour Google
+
+  ---
+  🟠 Important
+
+  3. lastModified: new Date() dans le sitemap
+  - Chaque déploiement dit à Google que toutes les pages ont changé
+  - Il faut utiliser des dates fixes correspondant aux vrais changements de contenu
+
+  4. Mots-clés trop limités
+  - Seulement 9 mots-clés, tous très génériques
+  - Il manque : "agence immobilière Abidjan", "louer appartement Côte d'Ivoire", "logiciel gestion locative", "gérant immobilier mobile", "immeuble vente
+  Abidjan"
+
+  5. Pas de schema FAQ
+  - Une section FAQ avec FAQPage schema permet d'obtenir des rich snippets (accordéons Google)
+  - C'est très efficace pour les requêtes "comment gérer ses biens" / "comment louer en Côte d'Ivoire"
+
+  6. Schema Organization incomplet
+  - Manque : numéro de téléphone, email de contact, région (addressRegion)
+  - Ces données enrichissent le Knowledge Panel Google
+
+  7. Twitter Card sans handle
+  - twitter.site et twitter.creator sont absents — limite la visibilité sur X/Twitter
+
+  ---
+  🟡 Secondaire
+
+  8. Pages /install/pro et /install/client en noindex
+  - Ces pages ne peuvent pas ranker pour "télécharger immoplus" ou "immoplus android"
+  - Si le trafic organique est souhaité dessus, il faudrait les indexer avec une vraie metadata
+
+  9. Vidéo hero hébergée sur un domaine externe (image2url.com)
+  - Impact négatif sur le LCP (Largest Contentful Paint) — indicateur Core Web Vitals
+  - Héberger la vidéo en local ou sur un CDN contrôlé améliorerait le score PageSpeed
+
+  10. Pas de schema SoftwareApplication enrichi
+  - Le schema WebApplication existe mais sans aggregateRating, downloadUrl vers App Store/Play Store, ni screenshot
+  - Ces données permettent des rich results pour les apps mobiles
+
+  ---
+  Résumé des actions à faire
+
+  ┌──────────┬─────────────────────────────────────────────────┐
+  │ Priorité │                     Action                      │
+  ├──────────┼─────────────────────────────────────────────────┤
+  │ 🔴       │ Créer une image OG 1200×630px dédiée            │
+  ├──────────┼─────────────────────────────────────────────────┤
+  │ 🔴       │ Corriger les accents dans hero-section.tsx      │
+  ├──────────┼─────────────────────────────────────────────────┤
+  │ 🟠       │ Fixer les dates dans sitemap.ts                 │
+  ├──────────┼─────────────────────────────────────────────────┤
+  │ 🟠       │ Enrichir les mots-clés dans lib/seo.ts          │
+  ├──────────┼─────────────────────────────────────────────────┤
+  │ 🟠       │ Ajouter un schema FAQ sur la page d'accueil     │
+  ├──────────┼─────────────────────────────────────────────────┤
+  │ 🟠       │ Compléter le schema Organization                │
+  ├──────────┼─────────────────────────────────────────────────┤
+  │ 🟠       │ Ajouter twitter.site                            │
+  ├──────────┼─────────────────────────────────────────────────┤
+  │ 🟡       │ Migrer la vidéo hero vers un hébergement propre │
+  └──────────┴─────────────────────────────────────────────────┘

@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { APP_STORE_URL, PLAY_STORE_URL } from "@/lib/app-links"
+import { CLIENT_APP_STORE_URL, CLIENT_PLAY_STORE_URL } from "@/lib/app-links"
 
 const features = [
   {
@@ -47,7 +47,7 @@ export function FeaturesSection() {
         </div>
         <div className="mt-8 flex flex-col items-center justify-center gap-2 sm:mt-10 sm:flex-row">
           <a
-            href={APP_STORE_URL}
+            href={CLIENT_APP_STORE_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="block h-11 w-auto transition-opacity hover:opacity-90 sm:h-12 md:h-14 lg:h-16"
@@ -61,7 +61,7 @@ export function FeaturesSection() {
             />
           </a>
           <a
-            href={PLAY_STORE_URL}
+            href={CLIENT_PLAY_STORE_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="block h-11 w-auto transition-opacity hover:opacity-90 sm:h-12 md:h-14 lg:h-16"

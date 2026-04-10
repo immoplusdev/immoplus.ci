@@ -8,7 +8,7 @@ export function PilotezBiensSection() {
     <section className="relative bg-white py-12 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 flex flex-col gap-6">
         <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl lg:text-4xl">
-          Pilotez vos biens comme un pro.
+          Vous êtes un professionnel de l'immobilier ?
         </h2>
 
         <div className="mt-6 sm:mt-8 flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-8">
@@ -19,10 +19,10 @@ export function PilotezBiensSection() {
             </p>
             <div className="mt-6 sm:mt-8">
               <Link
-                href="#en-savoir-plus"
+                href="/download"
                 className="inline-flex items-center gap-2 text-[#156EE4] font-normal transition-colors hover:text-[#1259c7]"
               >
-                En savoir plus →
+                Télécharger l'app pro
               </Link>
               <span className="mt-0.5 block h-[1px] w-[6.6875rem] bg-[#4262FF]" />
             </div>

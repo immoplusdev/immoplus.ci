@@ -19,10 +19,10 @@ export function RentBuySection() {
             </p>
             <div className="mt-6 flex flex-col gap-0 sm:mt-8">
               <Link
-                href="#locations"
+                href="/download"
                 className="inline-flex items-center gap-2 text-[#156EE4] font-semibold transition-colors hover:text-[#1259c7]"
               >
-                Voir les locations
+                Télécharger l'application
               </Link>
               <span className="mt-0.5 block h-0.5 w-[6.6875rem] bg-[#4262FF]" />
             </div>
@@ -114,10 +114,10 @@ export function RentBuySection() {
             </p>
             <div className="mt-6 flex flex-col gap-0 sm:mt-8">
               <Link
-                href="#ventes"
+                href="/download"
                 className="inline-flex items-center gap-2 text-[#156EE4] font-semibold transition-colors hover:text-[#1259c7] "
               >
-                Découvrir les ventes
+                Télécharger l'application
               </Link>
               <span className="mt-0.5 block h-0.5 w-[6.6875rem] bg-[#4262FF]" />
             </div>
