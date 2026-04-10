@@ -4,8 +4,6 @@ import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
-import { getDownloadUrl, APP_STORE_URL } from "@/lib/app-links"
-
 const navLinks = [
   { label: "Accueil", href: "#accueil" },
   { label: "Fonctionnalités", href: "#fonctionnalites" },
@@ -16,16 +14,10 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
-  const [downloadUrl, setDownloadUrl] = useState(APP_STORE_URL)
-
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20)
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-
-  useEffect(() => {
-    setDownloadUrl(getDownloadUrl())
   }, [])
 
   return (
@@ -82,15 +74,13 @@ export function Navbar() {
           })}
         </div>
 
-        {/* Bouton Télécharger — redirige vers Play Store ou App Store selon l'appareil */}
-        <a
-          href={downloadUrl}
-          target="_blank"
-          rel="noopener noreferrer"
+        {/* Bouton Télécharger — redirige vers la page de téléchargement */}
+        <Link
+          href="/download"
           className="shrink-0 rounded-full bg-[#156EE4] px-4 py-2 text-[13px] font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#1259c7] hover:shadow-md hover:shadow-[#156EE4]/25 sm:text-sm"
         >
           Télécharger
-        </a>
+        </Link>
       </div>
 
       {/* Mobile : barre simple + menu */}
@@ -131,15 +121,13 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <a
-              href={downloadUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/download"
               className="mt-2 rounded-full bg-[#156EE4] py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-[#1259c7]"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Télécharger
-            </a>
+            </Link>
           </div>
         </div>
       )}

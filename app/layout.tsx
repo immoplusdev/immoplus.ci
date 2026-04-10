@@ -102,6 +102,36 @@ const webApplicationJsonLd = {
   },
 }
 
+const localBusinessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  name: SITE_NAME,
+  description: SITE_DESCRIPTION,
+  url: SITE_URL,
+  logo: DEFAULT_OG_IMAGE,
+  telephone: "+2250701160450",
+  email: "support@immoplus.ci",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Cocody Riviera 3",
+    addressLocality: "Abidjan",
+    addressCountry: "CI",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 5.3600,
+    longitude: -3.9800,
+  },
+  areaServed: {
+    "@type": "Country",
+    name: "Côte d'Ivoire",
+  },
+  sameAs: [
+    "https://www.instagram.com/immoplus_lapp",
+    "https://web.facebook.com/profile.php?id=61584464421569",
+  ],
+}
+
 const webSiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -159,16 +189,24 @@ export default function RootLayout({
             __html: JSON.stringify(webSiteJsonLd),
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessJsonLd),
+          }}
+        />
         
-        <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-KDQENRT798"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-KDQENRT798');
-        </script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-KDQENRT798');
+            `,
+          }}
+        />
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>{children}</body>
     </html>

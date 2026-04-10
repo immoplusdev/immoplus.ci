@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 import { Building2, Upload, LayoutGrid, Banknote } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { getDownloadUrl, APP_STORE_URL } from "@/lib/app-links"
+import { CLIENT_APP_STORE_URL, CLIENT_PLAY_STORE_URL } from "@/lib/app-links"
 
 const badgeSteps = [
   { num: "01", label: "Publiez", icon: Upload },
@@ -23,14 +23,14 @@ export function HeroSection() {
   const [isVisible, setIsVisible] = useState(false)
   const [activeStepIndex, setActiveStepIndex] = useState(0)
   const [hoveredStep, setHoveredStep] = useState<number | null>(null)
-  const [downloadUrl, setDownloadUrl] = useState(APP_STORE_URL)
+  const [downloadUrl, setDownloadUrl] = useState(CLIENT_APP_STORE_URL)
 
   useEffect(() => {
     setIsVisible(true)
   }, [])
 
   useEffect(() => {
-    setDownloadUrl(getDownloadUrl())
+    setDownloadUrl(/Android/i.test(navigator.userAgent) ? CLIENT_PLAY_STORE_URL : CLIENT_APP_STORE_URL)
   }, [])
 
   // Cycle active step
@@ -133,7 +133,7 @@ export function HeroSection() {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              La gestion immobiliere, enfin{" "}
+              La gestion immobilière, enfin{" "}
               <span className="text-[#156EE4]">simple</span> et{" "}
               <span className="text-[#156EE4]">intelligente</span>.
             </h1>
@@ -144,7 +144,7 @@ export function HeroSection() {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              Gerez biens, clients, contrats et paiements depuis une seule plateforme moderne.
+              Gérez biens, clients, contrats et paiements depuis une seule plateforme moderne.
             </p>
 
             {/* CTA + Social proof */}

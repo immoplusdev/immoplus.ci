@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { APP_STORE_URL, PLAY_STORE_URL } from "@/lib/app-links"
+import { CLIENT_APP_STORE_URL, CLIENT_PLAY_STORE_URL } from "@/lib/app-links"
 
 export function CtaDownloadSection() {
   
@@ -17,14 +17,14 @@ export function CtaDownloadSection() {
         {/* Gauche : texte + boutons (sur fond bleu visuellement) */}
         <div className="flex flex-1 flex-col justify-center md:order-1 md:py-12">
           <h2 className="w-4/6  text-2xl font-bold leading-tight text-white sm:text-3xl md:text-4xl">
-            Prêt à simplifier votre immobilier ?
+            Trouver votre prochaine résidence
           </h2>
           <p className="mt-3 text-white/90 sm:mt-4 sm:text-lg">
             Téléchargez l&apos;application dès maintenant.
           </p>
           <div className="mt-6 flex flex-col gap-2 sm:mt-8 sm:flex-row sm:gap-3">
             <Link
-              href={APP_STORE_URL}
+              href={CLIENT_APP_STORE_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="block h-9 w-auto transition-opacity hover:opacity-90 sm:h-10"
@@ -39,7 +39,7 @@ export function CtaDownloadSection() {
               />
             </Link>
             <Link
-              href={PLAY_STORE_URL}
+              href={CLIENT_PLAY_STORE_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="block h-9 w-auto transition-opacity hover:opacity-90 sm:h-10"
